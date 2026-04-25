@@ -1,0 +1,15 @@
+# Environment variables (API keys)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ChromaDB storage
+chroma_db/
+
+# Data files (PDFs)
+data/raw/*.pdf
+
+# Mac files
+.DS_Store
