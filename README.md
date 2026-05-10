@@ -68,7 +68,7 @@ Create and activate a virtual environment
 <br>`python3 -m venv venv`
 <br>`source venv/bin/activate`
 <br> Install required packages
-<br> `pip install -r requirements.txt`
+<br> `pip3 install -r requirements.txt`
 
 ### Configure Environment Variables
 Create a .env file:
