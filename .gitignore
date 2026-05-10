@@ -8,8 +8,11 @@ __pycache__/
 # ChromaDB storage
 chroma_db/
 
-# Data files (PDFs)
+# Data files
 data/raw/*.pdf
+
+# Uploaded Data Files
+data/uploads
 
 # Mac files
 .DS_Store

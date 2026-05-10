@@ -1,5 +1,8 @@
 from pdf_loader import load_pdf
 
+# Splits extracted PDF texts into overlapping chunks
+# chunk_size: controls how much text is in each chunk
+# overlap: keeps part of previous chunk so context is not cutoff
 def chunk_text(text: str, chunk_size: int = 1200, overlap: int = 200) -> list[dict]:
 
     if not text:
@@ -14,6 +17,7 @@ def chunk_text(text: str, chunk_size: int = 1200, overlap: int = 200) -> list[di
 
     while start < len(text):
         end = start + chunk_size
+        # Get section of a text based on chunk window
         chunk = text[start:end].strip()
 
         if chunk:
@@ -23,12 +27,14 @@ def chunk_text(text: str, chunk_size: int = 1200, overlap: int = 200) -> list[di
             })
             chunk_id += 1
 
+        # Move forward by chunk_size - overlap
         start += chunk_size - overlap
 
     return chunks
 
+# Testing
 if __name__ == "__main__":
-    pdf_path = "data/raw/walmart-10k.pdf"
+    pdf_path = "data/raw/walmart-10K.pdf"
 
     text = load_pdf(pdf_path)
     chunks = chunk_text(text)
